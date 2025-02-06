@@ -9,8 +9,6 @@ baseurl: "/fabriccatalyst"
 url: "https://microsoft.github.io/fabriccatalyst/"
 permalink: pretty
 #favicon: /path/to/favicon.png
-# gh_sponsor: chrisrhymes
-theme: bulma-clean-theme
 #hide_share_buttons: true
 #theme_color: '#eeeeee'
 #fixed_navbar: top

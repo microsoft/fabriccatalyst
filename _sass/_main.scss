@@ -19,13 +19,10 @@ $hero-darken: $dark !default;
 @import "block-list";
 @import "promo-page";
 
-.gh-sponsor {
-  color: white !important;
-
-  .icon {
-    color: #ea4aaa !important; // Pink color for the heart icon in nav
-  }
-}
+// Remove or comment out this section
+// .gh-sponsor {
+//   color: white !important;
+// }
 
 // Custom styles for personalized icons
 .custom-icon {

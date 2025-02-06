@@ -1,7 +1,5 @@
 # Fabric Catalyst Initiative
 
-
-[![Pages Build Status](https://github.com/microsoft/fabriccatalyst/actions/workflows/github-pages.yml/badge.svg)](https://github.com/microsoft/fabriccatalyst/actions/workflows/github-pages.yml)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 Fabric Catalyst is an initiative designed to accelerate partner adoption and foster innovation through Microsoft Fabric, a unified platform for data and analytics. It empowers Microsoft partners to create high-impact, scalable data and AI solutions by offering a comprehensive portal of resources, including in-depth technical guidance, best practices, and strategic playbooks. These resources enable partners to design and deliver transformative solutions that drive meaningful business outcomes.
