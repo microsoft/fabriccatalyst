@@ -1,0 +1,10 @@
+- label: Real Time Intelligence
+  items:
+    - name: Medallion Architecture
+      link: /docs/Real-Time-Intelligence/RIT_Medalian_Artchitecture
+    - name: Data Sources
+      link: /docs/Real-Time-Intelligence/Data_Sources
+    - name: Bronze Layer
+      link: /docs/Real-Time-Intelligence/BronzeLayer
+    - name: Silver Layer
+      link: /docs/Real-Time-Intelligence/SilverLayer

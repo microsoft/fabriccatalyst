@@ -1,0 +1,18 @@
+- tier_name: Sponsors
+  size: small
+  description: |-
+    The Fabric Catalyst Initiative thrives on the collaborative efforts of Microsoft’s subject matter experts (SMEs), including Program Managers and Partner Solution Architects. Together, they work closely with partners, fostering deep engagement and co-innovation to drive impactful outcomes. This collective approach ensures that partners are empowered with the tools, knowledge, and support needed to succeed with Microsoft Fabric.
+  sponsors:
+    - name: Brad Watts
+      profile: https://www.linkedin.com/in/brad-watts-09443952/
+    - name: Leandro Santana
+      profile: https://www.linkedin.com/in/leandroeredia/
+    - name: Freddie Santos
+      profile: https://www.linkedin.com/in/fredguis/
+    - name: Rachel Liu
+      profile: https://www.linkedin.com/in/rachel-liu-367a45177/
+    - name: Fabio Padua
+      profile: https://www.linkedin.com/in/fabio-padua/
+    - name: Ana Lopez
+      profile: https://www.linkedin.com/in/amlopez81/
+ 

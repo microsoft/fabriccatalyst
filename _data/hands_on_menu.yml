@@ -1,0 +1,6 @@
+- label: Hands-on Labs
+  items:
+    - name: Real-time Analytics Labs
+      link: '#real-time-analytics-labs'
+    - name: Data Science Labs
+      link: '#data-science-labs' 
