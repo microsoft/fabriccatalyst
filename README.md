@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # bulma-clean-theme
 
 [![Gem Version](https://badge.fury.io/rb/bulma-clean-theme.svg)](https://badge.fury.io/rb/bulma-clean-theme)
@@ -77,3 +78,7 @@ Your theme is set up just like a normal Jekyll site! To test your theme, run `bu
 ## License
 
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+=======
+# fabriccatalyst
+Fabric Catalyst
+>>>>>>> 252bc0ac37890dbe13189263785738b3d88e9683
