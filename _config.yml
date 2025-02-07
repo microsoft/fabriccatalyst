@@ -8,21 +8,7 @@ description: >
 baseurl: "/fabriccatalyst"
 url: "https://microsoft.github.io/fabriccatalyst/"
 permalink: pretty
-#favicon: /path/to/favicon.png
-#hide_share_buttons: true
-#theme_color: '#eeeeee'
-#fixed_navbar: top
-#direction: one of <ltr, rtl, auto>, default: ltr
-force_theme: light
-
-paginate: 5
-paginate_path: "/blog/page:num"
-
-# Disqus Comments
-disqus:
-  # Leave shortname blank to disable comments site-wide.
-  # Disable comments for any post by adding `comments: false` to that post's YAML Front Matter.
-  shortname: 
+theme: bulma-clean-theme
 
 plugins:
   - jekyll-sitemap
@@ -42,16 +28,9 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 
-livereload: true
-
 sass:
   style: compressed
   source_dir: _sass
-  # load_paths: 
-    # - node_modules
-
-#google_analytics: UA-code-here
-cookie_policy: /cookie-policy/
 
 defaults:
   -
@@ -60,37 +39,16 @@ defaults:
       type: "pages"
     values:
       show_sidebar: true
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: post
-      image: https://via.placeholder.com/1200x800
-      show_sidebar: true
 
 markdown: kramdown
 highlighter: rouge
-
-footer_menu: example_footer_menu
-
-# collections:
-#   products: 
-#     output: true
-#     layout: product
-#     image: https://via.placeholder.com/800x600
-#     show_sidebar: false
-
-social:
-  x: https://x.com/msFabricconf
-  youtube: https://www.youtube.com/@MicrosoftFabric
-  linkedin: https://www.linkedin.com/showcase/microsoftfabric/posts/?feedView=all
-  
 
 include:
   - img
   - docs
   - assets
 
-# Make sure this line is uncommented and correct
-theme: bulma-clean-theme
+social:
+  x: https://x.com/msFabricconf
+  youtube: https://www.youtube.com/@MicrosoftFabric
+  linkedin: https://www.linkedin.com/showcase/microsoftfabric/posts/?feedView=all
