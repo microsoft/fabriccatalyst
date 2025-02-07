@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<div class="content">
+    <p>Published: {{ page.date | date: '%b %-d, %Y' }} by {{ page.author }}</p>
+
+    {% if page.series %}
+        {% include series.html %}
+    {% endif %}
+
+    {{ content }}
+</div>
+
+<div class="tags my-4">
+    {% for tag in page.tags %}
+        {% include tag.html tag=tag %}
+    {% endfor %}
+</div>
+
+{% unless site.hide_share_buttons %}
+    <div class="my-4">
+        {% include share-buttons.html %}
+    </div>
+{% endunless %}
+
+{% if site.disqus.shortname %}
+    <div class="my-4">
+        {% include disqus.html %}
+    </div>
+{% endif %}

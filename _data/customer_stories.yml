@@ -1,0 +1,23 @@
+intro: |-
+  # Success Stories with Microsoft Fabric RTI
+
+  Explore how organizations are leveraging Microsoft Fabric Real-Time Intelligence to transform their operations and achieve breakthrough results.
+items:
+  - title: Porsche Cup Brazil Accelerates Racing Performance
+    subtitle: Real-time telemetry analysis for motorsport excellence
+    description: |-
+      Dener Motorsport transformed their racing operations by implementing real-time telemetry analysis using Microsoft Fabric RTI. This solution enabled them to:
+      
+      * Process real-time data from multiple race car sensors
+      * Analyze performance metrics in real-time
+      * Make data-driven decisions during races
+      * Improve overall racing performance
+    features:
+      - Automotive/Motorsport Industry
+      - Brazil
+      - Microsoft Fabric, Real-Time Intelligence
+      - IoT Sensors, Vehicle Telemetry
+    image: /img/Porschecup.jpg
+    image_ratio: is-4by3
+    link: https://www.microsoft.com/en/customers/story/1751743814947802722-dener-motorsport-producose-ltd-azure-service-fabric-other-en-brazil
+    button_text: More Details 

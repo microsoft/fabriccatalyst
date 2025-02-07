@@ -1,0 +1,54 @@
+style: is-light
+height: is-medium
+items:
+  - title: Real Time Intelligence
+    subtitle: Deep dive into real time intelligence architecture patterns adoption.
+    icon: /assets/icons/rti.png
+    description: |-
+      Explore the Medallion Architecture implementation in Microsoft Fabric:
+      * Data Sources integration
+      * Bronze Layer implementation
+      * Silver Layer transformations
+      * Gold Layer analytics
+    call_to_action_name: Learn More
+    call_to_action_link: /docs/
+  
+  - title: Lakehouse
+    subtitle: Unpacking different technical designs for a unified foundation for your data.
+    icon: /assets/icons/lakehouse.png
+    call_to_action_link: /page-2/
+  
+  - title: Data Governance
+    subtitle: Ensuring efficient and secure data governance.
+    icon: /assets/icons/datagov.png
+    call_to_action_link: /page-3/
+  
+  - title: Data Engineering
+    subtitle: Best practices and patterns for building robust data pipelines.
+    icon: /assets/icons/dataeng.png
+    call_to_action_link: /page-4/
+  
+  - title: Data Science
+    subtitle: Advanced analytics and machine learning implementation guides.
+    icon: /assets/icons/datasci.png
+    call_to_action_link: /page-5/
+  
+  - title: DataOps
+    subtitle: Streamlining data operations and automation practices.
+    icon: /assets/icons/dataops.png
+    call_to_action_link: /page-6/
+  
+  - title: Data Warehouse
+    subtitle: Modern data warehouse architecture and implementation strategies.
+    icon: /assets/icons/datawh.png
+    call_to_action_link: /page-7/
+  
+  - title: Security
+    subtitle: Data security best practices and compliance frameworks.
+    icon: /assets/icons/security.png
+    call_to_action_link: /page-8/
+  
+  - title: AI
+    subtitle: Artificial Intelligence solutions and implementation patterns.
+    icon: /assets/icons/ai.png
+    call_to_action_link: /page-9/

@@ -1,0 +1,35 @@
+- label: Real Time Intelligence Patterns
+  items:
+    - name: Medallion Architecture
+      link: /docs/RIT_Medalian_Artchitecture/
+      items:
+        - name: Data Sources
+          link: /docs/Data_Sources/
+        - name: Bronze Layer
+          link: /docs/BronzeLayer/
+        - name: Silver Layer
+          link: /docs/SilverLayer/
+        - name: Gold Layer
+          link: /docs/GoldLayer/
+        - name: Visualization
+          link: /docs/Visualization/
+        - name: Demo/PoC Accelerators
+          link: /docs/DemoAccelerators/
+          items:
+            - name: Quick Start Guide
+              link: /docs/DemoAccelerators/#quick-start-guide
+            - name: RTI Solution in One Day
+              link: https://moaw.dev/workshop/?src=gh%3Amicrosoft%2Ffabconrtitutorial%2Fmain%2Fdocs%2F&step=0
+            - name: Sample Scenarios
+              link: /docs/DemoAccelerators/#sample-scenarios
+        - name: Customer Stories
+          link: /docs/CustomerStories/
+    - name: Pattern 2 - Architecture
+      link: /docs/Eventhouse/
+      items:
+        - name: Data Ingestion
+          link: /docs/Eventhouse/DataIngestion/
+        - name: Data Processing
+          link: /docs/Eventhouse/DataProcessing/
+        - name: Data Analytics
+          link: /docs/Eventhouse/DataAnalytics/

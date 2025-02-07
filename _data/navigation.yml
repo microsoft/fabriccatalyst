@@ -1,0 +1,17 @@
+- name: Capability Resources
+  link: /#
+  dropdown:
+    - name: Technical Learning Paths
+      link: /learning-paths/
+    - name: Pre Sales Skilling
+      link: /pre-sales/
+    - name: Webinars
+      link: /webinars/
+    - name: Hands-on Labs
+      link: /hands-on/
+    - name: Community
+      link: /community/
+
+- name: GTM Playbooks
+  link: /blog/
+
