@@ -74,12 +74,12 @@ highlighter: rouge
 
 footer_menu: example_footer_menu
 
-collections:
-  products: 
-    output: true
-    layout: product
-    image: https://via.placeholder.com/800x600
-    show_sidebar: false
+# collections:
+#   products: 
+#     output: true
+#     layout: product
+#     image: https://via.placeholder.com/800x600
+#     show_sidebar: false
 
 social:
   x: https://x.com/msFabricconf
@@ -91,3 +91,6 @@ include:
   - img
   - docs
   - assets
+
+# Make sure this line is uncommented and correct
+theme: bulma-clean-theme
