@@ -10,8 +10,8 @@ show_sidebar: false
 
 Fabric Catalyst is an initiative designed to accelerate partner adoption and foster innovation through Microsoft Fabric, a unified platform for data and analytics. It empowers Microsoft partners to create high-impact, scalable data and AI solutions by offering a comprehensive portal of resources, including in-depth technical guidance, best practices, and strategic playbooks. These resources enable partners to design and deliver transformative solutions that drive meaningful business outcomes.
 
-[![Gem Version](https://badge.fury.io/rb/bulma-clean-theme.svg)](https://badge.fury.io/rb/bulma-clean-theme)
-![Gem](https://img.shields.io/gem/dt/bulma-clean-theme.svg)
-![GitHub Repo stars](https://img.shields.io/github/stars/chrisrhymes/bulma-clean-theme?style=social)
+[![GitHub stars](https://img.shields.io/github/stars/microsoft/fabriccatalyst?style=social)](https://github.com/microsoft/fabriccatalyst/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/microsoft/fabriccatalyst?style=social)](https://github.com/microsoft/fabriccatalyst/network/members)
+[![GitHub license](https://img.shields.io/github/license/microsoft/fabriccatalyst)](https://github.com/microsoft/fabriccatalyst/blob/main/LICENSE)
 
 

@@ -20,4 +20,62 @@ items:
     image: /img/Porschecup.jpg
     image_ratio: is-4by3
     link: https://www.microsoft.com/en/customers/story/1751743814947802722-dener-motorsport-producose-ltd-azure-service-fabric-other-en-brazil
+    button_text: Learn More
+    button_class: is-primary is-medium
+
+  - title: One NZ Democratizes Data Access with Real-Time Analytics
+    subtitle: Transforming customer support with instant data insights
+    description: |-
+      One NZ, New Zealand's largest mobile carrier, revolutionized their customer service using Microsoft Fabric RTI. Their implementation achieved:
+      
+      * Reduction in call answer time from 45 to 27 seconds
+      * Real-time dashboard updates every 10 seconds
+      * Support for 170 business users and 800 contact center agents
+      * Democratized data access across the organization
+    features:
+      - Telecommunications Industry
+      - New Zealand
+      - Microsoft Fabric, Real-Time Analytics
+      - Power BI Integration
+    image: /img/onenz.jpg
+    image_ratio: is-4by3
+    link: https://www.microsoft.com/en/customers/story/1736247733970863057-onenz-powerbi-telecommunications-en-new-zealand
+    button_text: More Details
+
+  - title: Elcome Delivers Fast Broadband at Sea
+    subtitle: Real-time maritime connectivity with Microsoft Fabric
+    description: |-
+      Elcome transformed maritime connectivity by building Welcome, an industry-first ISP-grade monitoring platform using Microsoft Fabric RTI. Key achievements include:
+      
+      * Reduced data latency from minutes to seconds
+      * Real-time monitoring of maritime broadband
+      * Enhanced customer support capabilities
+      * Improved maritime safety and operations
+    features:
+      - Maritime Industry
+      - United Arab Emirates
+      - Microsoft Fabric, Real-Time Intelligence
+      - Data Activator Implementation
+    image: /img/elcome.jpg
+    image_ratio: is-4by3
+    link: https://www.microsoft.com/en/customers/story/1770346240728000716-elcome-microsoft-copilot-consumer-goods-en-united-arab-emirates
+    button_text: More Details
+
+  - title: Seair Exim Solutions Accelerates Data Processing
+    subtitle: Lightning-fast trade data delivery with Real-Time Analytics
+    description: |-
+      Seair Exim Solutions transformed their Eximpedia platform using Microsoft Fabric RTI, achieving remarkable improvements:
+      
+      * 90% increase in data processing speed
+      * 52% reduction in operational costs
+      * Sub-second query response times
+      * Enhanced visualization capabilities with Power BI
+    features:
+      - Professional Services Industry
+      - India
+      - Microsoft Fabric, Real-Time Analytics
+      - Power BI Integration
+    image: /img/seair.jpg
+    image_ratio: is-4by3
+    link: https://www.microsoft.com/en/customers/story/1751967961979695913-seair-power-bi-professional-services-en-india
     button_text: More Details 

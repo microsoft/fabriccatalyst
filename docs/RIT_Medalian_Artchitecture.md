@@ -85,6 +85,8 @@ Real-Time Intelligence allows you to build a meallion lakehouse architecture by 
 
 ![Real-Time Intelligence Medallion Architecture]({{ site.baseurl }}/assets/images/rtiarch.png)
 
+[🔍 Click to zoom in](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/media/architecture-medallion/architecture-medallion.png#lightbox)
+
 For an overview of the Fabric RTI Medallion Architecture go [here]().
 
 In order to be sucessful with a Fabric RTI archetecture you need to understand each layer. 

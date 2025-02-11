@@ -1,18 +1,30 @@
 - tier_name: Sponsors
   size: small
   description: |-
-    The Fabric Catalyst Initiative thrives on the collaborative efforts of Microsoft’s subject matter experts (SMEs), including Program Managers and Partner Solution Architects. Together, they work closely with partners, fostering deep engagement and co-innovation to drive impactful outcomes. This collective approach ensures that partners are empowered with the tools, knowledge, and support needed to succeed with Microsoft Fabric.
+    The Fabric Catalyst Initiative thrives on the collaborative efforts of Microsoft's subject matter experts (SMEs), including Program Managers and Partner Solution Architects. Together, they work closely with partners, fostering deep engagement and co-innovation to drive impactful outcomes. This collective approach ensures that partners are empowered with the tools, knowledge, and support needed to succeed with Microsoft Fabric.
   sponsors:
     - name: Brad Watts
+      role: Principal Program Manager
+      photo: /assets/images/profiles/brad.jpg
       profile: https://www.linkedin.com/in/brad-watts-09443952/
     - name: Leandro Santana
+      role: Partner Solution Architect
+      photo: /assets/images/profiles/leandro.jpg
       profile: https://www.linkedin.com/in/leandroeredia/
     - name: Freddie Santos
+      role: Partner Solution Architect
+      photo: /assets/images/profiles/freddie.jpg
       profile: https://www.linkedin.com/in/fredguis/
     - name: Rachel Liu
+      role: Program Manager
+      photo: /assets/images/profiles/rachel.jpg
       profile: https://www.linkedin.com/in/rachel-liu-367a45177/
     - name: Fabio Padua
+      role: Partner Solution Architect
+      photo: /assets/images/profiles/fabio.jpg
       profile: https://www.linkedin.com/in/fabio-padua/
     - name: Ana Lopez
+      role: Partner Solution Architect
+      photo: /assets/images/profiles/ana.jpg
       profile: https://www.linkedin.com/in/amlopez81/
  
