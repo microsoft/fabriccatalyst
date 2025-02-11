@@ -24,12 +24,13 @@
               link: /docs/DemoAccelerators/#sample-scenarios
         - name: Customer Stories
           link: /docs/CustomerStories/
-    - name: Pattern 2 - Architecture
-      link: /docs/Eventhouse/
-      items:
-        - name: Data Ingestion
-          link: /docs/Eventhouse/DataIngestion/
-        - name: Data Processing
-          link: /docs/Eventhouse/DataProcessing/
-        - name: Data Analytics
-          link: /docs/Eventhouse/DataAnalytics/
+    # Pattern 2 section commented out until further development
+    # - name: Pattern 2 - Architecture
+    #   link: /docs/Eventhouse/
+    #   items:
+    #     - name: Data Ingestion
+    #       link: /docs/Eventhouse/DataIngestion/
+    #     - name: Data Processing
+    #       link: /docs/Eventhouse/DataProcessing/
+    #     - name: Data Analytics
+    #       link: /docs/Eventhouse/DataAnalytics/

@@ -21,7 +21,12 @@
                                     </div>
                                 </a>
                             {% endif %}
-                            <p class="title is-5">{{ callout.title }}</p>
+                            <p class="title is-5">
+                                {{ callout.title }}
+                                {% if callout.coming_soon %}
+                                    <span class="is-size-7 is-italic has-text-grey">(Coming soon)</span>
+                                {% endif %}
+                            </p>
                             <p class="subtitle is-5">{{ callout.subtitle }}</p>
                         </div>
                     {% endfor %}

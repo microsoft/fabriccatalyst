@@ -15,40 +15,48 @@ items:
   
   - title: Lakehouse
     subtitle: Unpacking different technical designs for a unified foundation for your data.
-    icon: /assets/icons/lakehouse.png
-    call_to_action_link: /page-2/
+    icon: /assets/icons/lakehouse2.png
+    # call_to_action_link: /page-2/
+    coming_soon: true
   
   - title: Data Governance
     subtitle: Ensuring efficient and secure data governance.
-    icon: /assets/icons/datagov.png
-    call_to_action_link: /page-3/
+    icon: /assets/icons/datagov2.png
+    # call_to_action_link: /page-3/
+    coming_soon: true
   
   - title: Data Engineering
     subtitle: Best practices and patterns for building robust data pipelines.
-    icon: /assets/icons/dataeng.png
-    call_to_action_link: /page-4/
+    icon: /assets/icons/dataeng2.png
+    # call_to_action_link: /page-4/
+    coming_soon: true
   
   - title: Data Science
     subtitle: Advanced analytics and machine learning implementation guides.
-    icon: /assets/icons/datasci.png
-    call_to_action_link: /page-5/
+    icon: /assets/icons/datasci2.png
+    # call_to_action_link: /page-5/
+    coming_soon: true
   
   - title: DataOps
     subtitle: Streamlining data operations and automation practices.
-    icon: /assets/icons/dataops.png
-    call_to_action_link: /page-6/
+    icon: /assets/icons/dataops2.png
+    # call_to_action_link: /page-6/
+    coming_soon: true
   
   - title: Data Warehouse
     subtitle: Modern data warehouse architecture and implementation strategies.
-    icon: /assets/icons/datawh.png
-    call_to_action_link: /page-7/
+    icon: /assets/icons/datawh2.png
+    # call_to_action_link: /page-7/
+    coming_soon: true
   
   - title: Security
     subtitle: Data security best practices and compliance frameworks.
-    icon: /assets/icons/security.png
-    call_to_action_link: /page-8/
+    icon: /assets/icons/security2.png
+    # call_to_action_link: /page-8/
+    coming_soon: true
   
   - title: AI
     subtitle: Artificial Intelligence solutions and implementation patterns.
-    icon: /assets/icons/ai.png
-    call_to_action_link: /page-9/
+    icon: /assets/icons/ai2.png
+    # call_to_action_link: /page-9/
+    coming_soon: true
