@@ -37,3 +37,5 @@ Note that just because you utilize an update policy and thus an KQL DB table as 
   - Many scenarios you have reference data that complements the telemetry data. In you update policy you can connect to this reference data so it is pre-joined making the query more effecient. In order to do this you need to also bring that data into a table via some sorta batch process. For instance:
 
 ![Real-Time Intelligence Medallion Architecture]({{ site.baseurl }}/assets/images/rtibronzelookup.png)
+
+### Next: [Silver Layer](./SilverLayer.md)

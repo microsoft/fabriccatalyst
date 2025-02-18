@@ -156,3 +156,5 @@ For more information about implementing a Fabric lakehouse, see the following re
 - [Microsoft Fabric decision guide: choose a data store](../get-started/decision-guide-data-store.md)
 - Questions? Try asking the [Fabric community](https://community.fabric.microsoft.com/).
 - Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).
+
+### Next: [Data Sources](./Data_Sources.md)
