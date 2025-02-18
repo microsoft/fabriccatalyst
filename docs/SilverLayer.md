@@ -45,3 +45,5 @@ This gives you the ability to process the data however you like as long as you c
   - KQL DB Update Policy is driven by KQL Queries
 - Cost
   - Event Procesor consumes capacity units according to how many transformations you are doing
+
+### Next: [Gold Layer](./GoldLayer.md)
