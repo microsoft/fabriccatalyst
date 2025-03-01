@@ -1,0 +1,27 @@
+- label: Sales Resources
+  items:
+    - name: Sales Customer Conversations
+      link: /GTMPlaybooks/#sales-customer-conversations
+    - name: Industry Solutions
+      link: /GTMPlaybooks/#industry-solutions
+
+- label: Technical Resources
+  items:
+    - name: Technical Customer Conversations
+      link: /GTMPlaybooks/#technical-customer-conversations
+    - name: Quick Demos
+      link: /GTMPlaybooks/#quick-demos
+
+- label: Marketing Resources
+  items:
+    - name: Campaign Materials
+      link: /GTMPlaybooks/#campaign-materials
+    -
+
+# Partner Support section commented out until content is ready
+# - label: Partner Support
+#   items:
+#     - name: Training & Enablement
+#       link: /GTMPlaybooks/#training--enablement
+#     - name: Business Development
+#       link: /GTMPlaybooks/#business-development 

@@ -46,4 +46,5 @@ This gives you the ability to process the data however you like as long as you c
 - Cost
   - Event Procesor consumes capacity units according to how many transformations you are doing
 
-### Next: [Gold Layer](./GoldLayer.md)
+{: .no_toc }
+#### Next: [Gold Layer]({{ site.baseurl }}/docs/GoldLayer/)

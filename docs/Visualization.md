@@ -1,3 +1,12 @@
+---
+layout: page
+title: Real Time Intelligence
+subtitle: Visualization and Act
+menubar: docs_menu
+show_sidebar: false
+toc: true
+---
+
 # Visualization
 Now that the data is stored in Eventhouse you can utilize multiple options to visualize the data.
 
@@ -35,4 +44,5 @@ There is a fully supported [REST APIs](https://learn.microsoft.com/en-us/kusto/a
 - [Power BI modeling with ADX - cheat sheet](https://techcommunity.microsoft.com/blog/azuredataexplorer/power-bi-modeling-with-adx---cheat-sheet/3768392)
 - [Using Dual Mode dimension in Power BI with ADX data](https://techcommunity.microsoft.com/blog/azuredataexplorer/using-dual-mode-dimension-in-power-bi-with-adx-data/3744264)
 
-### Next: [Demo/PoC Accelerators](./DemoAccelerators.md)
+{: .no_toc }
+#### Next: [Demo/PoC Accelerators]({{ site.baseurl }}/docs/DemoAccelerators/)

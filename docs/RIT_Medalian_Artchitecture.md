@@ -157,4 +157,6 @@ For more information about implementing a Fabric lakehouse, see the following re
 - Questions? Try asking the [Fabric community](https://community.fabric.microsoft.com/).
 - Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).
 
-### Next: [Data Sources](./Data_Sources.md)
+
+{: .no_toc }
+#### Next: [Data Sources]({{ site.baseurl }}/docs/Data_Sources/)

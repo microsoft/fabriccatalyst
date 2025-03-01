@@ -6,12 +6,44 @@ menubar: docs_menu
 show_sidebar: false
 ---
 
-
+<div style="float: right; margin-left: 30px; margin-bottom: 20px; margin-right: -50px;">
+  <div class="box" style="width: 250px; background: rgba(255,255,255,0.95);">
+    <div class="content is-small">
+      <div style="margin-bottom: 15px;">
+        <strong>Author</strong><br>
+        Brad Watts<br>
+        <span class="has-text-grey">Principal Program Manager</span><br>
+        <span class="has-text-grey">Microsoft</span><br>
+        <a href="https://www.linkedin.com/in/brad-watts-09443952/" target="_blank">
+          <span class="icon is-small">
+            <i class="fab fa-linkedin"></i>
+          </span>
+        </a>
+      </div>
+      <hr style="margin: 0.5rem 0;">
+      <div>
+        <strong>Co-Author</strong><br>
+        Leandro Santana<br>
+        <span class="has-text-grey">Senior Cloud Solution Architect</span><br>
+        <span class="has-text-grey">Microsoft</span><br>
+        <a href="https://www.linkedin.com/in/leandroeredia/" target="_blank">
+          <span class="icon is-small">
+            <i class="fab fa-linkedin"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
 
 In today's fast-paced digital ecosystem, Real Time Intelligence (RTI) is pivotal for organizations aiming to maintain a competitive edge. With the rapid surge in streaming data from IoT, mobile devices, and online interactions, the need for solutions capable of ingesting, processing, and analyzing data in real time has never been greater. 
 
 
-
+<div style="float: right; margin-left: 30px; margin-bottom: 20px; margin-right: -50px;">
+</div>
+<br>
 
 ## The Foundation
 
@@ -25,7 +57,7 @@ But what sets Fabric apart is its modularity and flexibility to address diverse 
 Fabric brings together data ingestion, transformation, storage, and visualization under one roof, streamlining workflows and accelerating time-to-insight.
 
 - **Flexibility for All Use Cases:**
-Whether it’s streaming data pipelines, predictive analytics, or anomaly detection, Fabric's architecture adapts to the unique demands of any industry.
+Whether it's streaming data pipelines, predictive analytics, or anomaly detection, Fabric's architecture adapts to the unique demands of any industry.
 
 - **Performance at Scale:**
 Powered by Azure's cloud-native infrastructure, Fabric scales dynamically to handle high data volumes while maintaining millisecond-level latency.
@@ -45,4 +77,4 @@ With Microsoft Fabric RTI, businesses can move beyond reactive decision-making t
 
 This series will delve into specific architecture patterns to help you design the perfect real-time intelligence solution for your needs. Start by exploring the Real Time Intelligence Menu to gain the foundational knowledge needed for success and unlock the full potential of Fabric for your business.
 
-Let’s build the future of real-time intelligence—together.
+Let's build the future of real-time intelligence—together.

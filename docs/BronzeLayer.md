@@ -38,4 +38,5 @@ Note that just because you utilize an update policy and thus an KQL DB table as 
 
 ![Real-Time Intelligence Medallion Architecture]({{ site.baseurl }}/assets/images/rtibronzelookup.png)
 
-### Next: [Silver Layer](./SilverLayer.md)
+{: .no_toc }
+#### Next: [Silver Layer]({{ site.baseurl }}/docs/SilverLayer/)

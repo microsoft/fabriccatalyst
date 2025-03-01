@@ -1,3 +1,11 @@
+---
+layout: page
+title: Real Time Intelligence
+subtitle: Gold Layer
+menubar: docs_menu
+show_sidebar: false
+toc: true
+---
 # Gold Layer
 The Gold Layer typically needed but not always required. In you're traditional medallion architecture this layer would be the only layer available for analytics. In a RTI Medallion architecture both the Silver Layer and Gold Layer are available for analytics.
 
@@ -66,4 +74,5 @@ IoTSilverDedupMV
 ## Summary
 At this stage you have a queriable Silver Layer along with an aggregated Gold Layer. This allow you to run ad-hoc queries and build visuals that can span long periods of time along with drilling down to specific records.
 
-### Next: [Visualization](./Visualization.md)
+{: .no_toc }
+#### Next: [Visualization]({{ site.baseurl }}/docs/Visualization/)

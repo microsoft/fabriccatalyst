@@ -56,4 +56,6 @@ We have SDKs for [.NET](https://learn.microsoft.com/en-us/azure/data-explorer/ne
 ### Option 5: Amazon S3 Bucket  
 Eventhouse has the capability of ingesting data from S3 Buckets. Combining AWS Lambda functions with our native capabilities allows you to continously ingest from S3. More details and implementation guide can be found [here](https://techcommunity.microsoft.com/blog/azuredataexplorer/azure-data-explorer-supports-native-ingestion-from-amazon-s3/3606746)
 
-### Next: [Bronze Layer](./BronzeLayer.md)
+
+{: .no_toc }
+#### Next: [Bronze Layer]({{ site.baseurl }}/docs/BronzeLayer/)
