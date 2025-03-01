@@ -3,8 +3,8 @@
   dropdown:
     - name: Technical Learning Paths
       link: /learning-paths/
-    - name: Pre Sales Skilling
-      link: /pre-sales/
+    - name: Sales Skilling
+      link: /sales-skilling/
     - name: Webinars
       link: /webinars/
     - name: Hands-on Labs
@@ -13,5 +13,8 @@
       link: /community/
 
 - name: GTM Playbooks
-  link: /blog/
+  link: /GTMPlaybooks/
+
+- name: FabCon 2025
+  link: /fabcon/
 

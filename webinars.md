@@ -5,10 +5,34 @@ subtitle: Calendar 2025
 show_sidebar: false
 ---
 
+<div class="notification is-warning is-light">
+<strong>Note</strong><br>
+This calendar is being regularly updated with new webinars and events. Check back frequently for the latest additions and updates to the schedule.
+</div>
+<br>
 <div class="notification is-info is-light">
   <span class="icon"><i class="fas fa-headphones"></i></span>
   <strong>With live translation audio in 11 languages*</strong>
   <p class="is-size-7">*Japanese | Korean | Chinese (Simplified & Traditional) | French | German | Italian | Portuguese (European & LATAM) | Spanish (European & LATAM)</p>
+</div>
+<br>
+<div class="notification is-info is-light">
+<div class="columns is-vcentered">
+  <div class="column is-8">
+    <strong>Partner Project Ready</strong><br>
+    Access our comprehensive collection of on-demand webinars and training sessions designed to help partners build and grow their Microsoft Fabric practice.
+  </div>
+  <div class="column is-4">
+    <div class="buttons is-right">
+      <a class="button is-info" href="https://gateway.on24.com/wcc/eh/4557503/search/-?search=fabric" target="_blank">
+        <span>Access Workshops Portal</span>
+        <span class="icon">
+          <i class="fas fa-external-link-alt"></i>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
 </div>
 
 <div class="calendar-container">
@@ -141,5 +165,6 @@ show_sidebar: false
 </div>
 
 <div class="notification is-light mt-4">
-  **please note - event names and dates are subject to change. Registration opens 4-6 weeks in advance
+  <strong>Note</strong><br>
+  Event names and dates are subject to change. Registration opens 4-6 weeks in advance.
 </div> 

@@ -32,6 +32,7 @@ This repository contains:
 - Best practices for API usage
 - Ready-to-use code snippets
 
-### Next: [Customer Stories](./CustomerStories.md)
+{: .no_toc }
+#### Next: [Customer Stories]({{ site.baseurl }}/docs/CustomerStories/)
 
 
