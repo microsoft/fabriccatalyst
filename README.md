@@ -29,6 +29,8 @@ Visit our [Fabric Catalyst Portal](https://microsoft.github.io/fabriccatalyst/) 
 
 This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution.
 
+If you're interested in contributing to this project, please refer to our [Contributing Guidelines](CONTRIBUTING.MD) for detailed instructions on how to get started. Your contributions, whether through code, documentation, or ideas, are highly valued and help us improve the Fabric Catalyst initiative.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
