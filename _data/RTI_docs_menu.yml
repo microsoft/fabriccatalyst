@@ -4,26 +4,26 @@
       link: /docs/RIT_Medalian_Artchitecture/
       items:
         - name: Data Sources
-          link: /docs/Data_Sources/
+          link: /docs/RTI_Data_Sources/
         - name: Bronze Layer
-          link: /docs/BronzeLayer/
+          link: /docs/RTI_BronzeLayer/
         - name: Silver Layer
-          link: /docs/SilverLayer/
+          link: /docs/RTI_SilverLayer/
         - name: Gold Layer
-          link: /docs/GoldLayer/
+          link: /docs/RTI_GoldLayer/
         - name: Visualization
-          link: /docs/Visualization/
+          link: /docs/RTI_Visualization/
         - name: Demo/PoC Accelerators
-          link: /docs/DemoAccelerators/
+          link: /docs/RTI_DemoAccelerators/
           items:
             - name: Quick Start Guide
-              link: /docs/DemoAccelerators/#quick-start-guide
+              link: /docs/RTI_DemoAccelerators/#quick-start-guide
             - name: RTI Solution in One Day
               link: https://moaw.dev/workshop/?src=gh%3Amicrosoft%2Ffabconrtitutorial%2Fmain%2Fdocs%2F&step=0
             - name: Sample Scenarios
-              link: /docs/DemoAccelerators/#sample-scenarios
+              link: /docs/RTI_DemoAccelerators/#sample-scenarios
         - name: Customer Stories
-          link: /docs/CustomerStories/
+          link: /docs/RTI_CustomerStories/
     # Pattern 2 section commented out until further development
     # - name: Pattern 2 - Architecture
     #   link: /docs/Eventhouse/

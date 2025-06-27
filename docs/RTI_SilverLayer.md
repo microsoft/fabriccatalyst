@@ -2,7 +2,7 @@
 layout: page
 title: Real Time Intelligence
 subtitle: Medallion Architecture - Silver Layer
-menubar: docs_menu
+menubar: RTI_docs_menu
 show_sidebar: false
 toc: true
 ---
@@ -47,4 +47,4 @@ This gives you the ability to process the data however you like as long as you c
   - Event Procesor consumes capacity units according to how many transformations you are doing
 
 {: .no_toc }
-#### Next: [Gold Layer]({{ site.baseurl }}/docs/GoldLayer/)
+#### Next: [Gold Layer]({{ site.baseurl }}/docs/RTI_GoldLayer/)

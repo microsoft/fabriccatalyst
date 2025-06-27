@@ -2,7 +2,7 @@
 layout: page
 title: Real Time Intelligence
 subtitle: Customer Stories and Use Cases
-menubar: docs_menu
+menubar: RTI_docs_menu
 show_sidebar: false
-showcase: customer_stories
+showcase: RTI_customer_stories
 ---

@@ -1,0 +1,283 @@
+name: Fabric Auto-Sync DEV Workspace
+
+on:
+  workflow_dispatch:
+    inputs:
+      force_sync:
+        description: 'Force sync even if no changes detected'
+        type: boolean
+        default: false
+        required: false
+      target_folder:
+        description: 'Specific folder to sync (leave empty for all fabric folder changes)'
+        type: string
+        default: 'fabric'
+        required: false
+      sync_mode:
+        description: 'Sync operation mode'
+        type: choice
+        default: 'auto'
+        required: false
+        options:
+          - 'auto'
+          - 'force_update_from_git'
+          - 'check_status_only'
+
+env:
+  FABRIC_API_BASE: "https://api.fabric.microsoft.com/v1"
+
+jobs:
+  auto-sync-dev-workspace:
+    name: Auto-Sync DEV Workspace from Git
+    runs-on: ubuntu-latest
+    # Run on main branch pushes, merged PRs, or manual workflow dispatch
+    if: |
+      github.ref == 'refs/heads/main' && (
+        github.event_name == 'push' || 
+        (github.event_name == 'pull_request' && github.event.pull_request.merged == true) ||
+        github.event_name == 'workflow_dispatch'
+      )
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          
+      - name: Detect Power BI Changes
+        id: detect-changes
+        run: |
+          echo "🔍 Detecting changes in fabric folder..."
+          
+          # Check if this is a manual run
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "🔧 Manual workflow dispatch detected"
+            echo "Force sync: ${{ github.event.inputs.force_sync }}"
+            echo "Target folder: ${{ github.event.inputs.target_folder }}"
+            echo "Sync mode: ${{ github.event.inputs.sync_mode }}"
+            
+            if [ "${{ github.event.inputs.force_sync }}" = "true" ]; then
+              echo "sync_needed=true" >> $GITHUB_OUTPUT
+              echo "changed_files=Manual sync - force enabled" >> $GITHUB_OUTPUT
+              echo "🚀 Force sync enabled - proceeding with sync operation"
+              exit 0
+            fi
+            
+            if [ "${{ github.event.inputs.sync_mode }}" = "check_status_only" ]; then
+              echo "sync_needed=check_only" >> $GITHUB_OUTPUT
+              echo "🔍 Status check only mode - will check Git status without syncing"
+              exit 0
+            fi
+          fi
+          
+          # Detect changes for automatic triggers
+          TARGET_FOLDER="${{ github.event.inputs.target_folder || 'fabric' }}"
+          echo "Checking for changes in: $TARGET_FOLDER/"
+          
+          if [ "${{ github.event_name }}" == "push" ]; then
+            CHANGED_FILES=$(git diff --name-only HEAD^ HEAD | grep "^$TARGET_FOLDER/" || true)
+          elif [ "${{ github.event_name }}" == "pull_request" ]; then
+            CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep "^$TARGET_FOLDER/" || true)
+          else
+            # Manual dispatch without force - check for any recent changes
+            CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD | grep "^$TARGET_FOLDER/" || true)
+          fi
+          
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "ℹ️ No changes in $TARGET_FOLDER folder, skipping sync"
+            echo "sync_needed=false" >> $GITHUB_OUTPUT
+          else
+            echo "📊 Files changed in $TARGET_FOLDER folder:"
+            echo "$CHANGED_FILES"
+            echo "sync_needed=true" >> $GITHUB_OUTPUT
+            echo "changed_files<<EOF" >> $GITHUB_OUTPUT
+            echo "$CHANGED_FILES" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Authenticate with Fabric
+        id: auth
+        if: steps.detect-changes.outputs.sync_needed == 'true'
+        run: |
+          echo "🔐 Authenticating with Microsoft Fabric using Service Principal..."
+          
+          # Get access token for Fabric API
+          ACCESS_TOKEN=$(curl -s -X POST \
+            "https://login.microsoftonline.com/${{ secrets.FABRIC_TENANT_ID }}/oauth2/v2.0/token" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -d "client_id=${{ secrets.FABRIC_CLIENT_ID }}&client_secret=${{ secrets.FABRIC_CLIENT_SECRET }}&scope=https://api.fabric.microsoft.com/.default&grant_type=client_credentials" \
+            | jq -r '.access_token')
+            
+          if [ "$ACCESS_TOKEN" = "null" ] || [ -z "$ACCESS_TOKEN" ]; then
+            echo "❌ Fabric API authentication failed"
+            exit 1
+          fi
+          
+          echo "✅ Fabric API authentication successful"
+          echo "::add-mask::$ACCESS_TOKEN"
+          echo "fabric_token=$ACCESS_TOKEN" >> $GITHUB_OUTPUT
+
+      - name: Check Git Connection Status
+        id: git-connection
+        if: steps.detect-changes.outputs.sync_needed == 'true'
+        env:
+          FABRIC_TOKEN: ${{ steps.auth.outputs.fabric_token }}
+        run: |
+          echo "📊 Checking Git connection status for workspace..."
+          
+          # Use official Fabric Git API
+          GIT_STATUS=$(curl -s -X GET \
+            "${{ env.FABRIC_API_BASE }}/workspaces/${{ secrets.DEV_WORKSPACE_ID }}/git/status" \
+            -H "Authorization: Bearer $FABRIC_TOKEN" \
+            -H "Content-Type: application/json")
+          
+          echo "Git Status Response: $GIT_STATUS"
+          
+          # Check for errors
+          ERROR_CODE=$(echo "$GIT_STATUS" | jq -r '.errorCode // empty')
+          
+          if [ "$ERROR_CODE" = "GitCredentialsNotConfigured" ]; then
+            echo "❌ Service principal Git credentials issue detected"
+            echo "🔧 Need to configure Git credentials for service principal"
+            echo "git_configured=false" >> $GITHUB_OUTPUT
+            
+            # Try to get connection info to diagnose
+            CONNECTION_INFO=$(curl -s -X GET \
+              "${{ env.FABRIC_API_BASE }}/workspaces/${{ secrets.DEV_WORKSPACE_ID }}/git/connection" \
+              -H "Authorization: Bearer $FABRIC_TOKEN" \
+              -H "Content-Type: application/json")
+            
+            echo "Git Connection Info: $CONNECTION_INFO"
+            
+          else
+            echo "✅ Git connection is properly configured"
+            echo "git_configured=true" >> $GITHUB_OUTPUT
+            
+            # Check if sync is actually needed
+            WORKSPACE_HEAD=$(echo "$GIT_STATUS" | jq -r '.workspaceHead // empty')
+            GIT_HEAD=$(echo "$GIT_STATUS" | jq -r '.gitHead // empty')
+            
+            if [ "$WORKSPACE_HEAD" != "$GIT_HEAD" ] && [ -n "$WORKSPACE_HEAD" ] && [ -n "$GIT_HEAD" ]; then
+              echo "sync_required=true" >> $GITHUB_OUTPUT
+              echo "📥 Workspace sync is required"
+            else
+              echo "sync_required=false" >> $GITHUB_OUTPUT
+              echo "ℹ️ Workspace is already up-to-date with Git"
+            fi
+          fi
+
+      - name: Auto-Sync Workspace from Git
+        if: steps.detect-changes.outputs.sync_needed == 'true' && steps.git-connection.outputs.git_configured == 'true' && steps.git-connection.outputs.sync_required == 'true'
+        env:
+          FABRIC_TOKEN: ${{ steps.auth.outputs.fabric_token }}
+        run: |
+          echo "🔄 Auto-syncing DEV workspace from Git (main branch)..."
+          echo "Workspace: FABRIC-CATALYST-GH-DEV"
+          echo "Changed files in fabric folder:"
+          echo "${{ steps.detect-changes.outputs.changed_files }}"
+          
+          # Trigger updateFromGit operation using official Fabric Git API
+          SYNC_RESPONSE=$(curl -s -X POST \
+            "${{ env.FABRIC_API_BASE }}/workspaces/${{ secrets.DEV_WORKSPACE_ID }}/git/updateFromGit" \
+            -H "Authorization: Bearer $FABRIC_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{}')
+          
+          echo "Sync Response: $SYNC_RESPONSE"
+          
+          # Check for errors
+          ERROR_CODE=$(echo "$SYNC_RESPONSE" | jq -r '.errorCode // empty')
+          ERROR_MESSAGE=$(echo "$SYNC_RESPONSE" | jq -r '.message // empty')
+          
+          if [ -n "$ERROR_CODE" ]; then
+            echo "❌ Sync failed: $ERROR_CODE"
+            echo "Error message: $ERROR_MESSAGE"
+            
+            if [ "$ERROR_CODE" = "GitCredentialsNotConfigured" ]; then
+              echo ""
+              echo "🔧 SOLUTION REQUIRED:"
+              echo "1. Service principal needs to be manually connected to Git"
+              echo "2. Or use a user account instead of service principal"
+              echo "3. Or set up GitHub App authentication"
+            fi
+            exit 1
+          else
+            echo "✅ Workspace sync initiated successfully"
+          fi
+
+      - name: Verify Sync Completion
+        if: steps.detect-changes.outputs.sync_needed == 'true' && steps.git-connection.outputs.git_configured == 'true' && steps.git-connection.outputs.sync_required == 'true'
+        env:
+          FABRIC_TOKEN: ${{ steps.auth.outputs.fabric_token }}
+        run: |
+          echo "⏳ Waiting for sync operation to complete..."
+          
+          # Wait for sync to complete (check status periodically)
+          for i in {1..20}; do
+            sleep 15
+            
+            # Check status using official Fabric Git API
+            STATUS_RESPONSE=$(curl -s -X GET \
+              "${{ env.FABRIC_API_BASE }}/workspaces/${{ secrets.DEV_WORKSPACE_ID }}/git/status" \
+              -H "Authorization: Bearer $FABRIC_TOKEN")
+            
+            echo "Status check $i/20: Checking sync progress..."
+            
+            # Check if sync is complete (workspace and git heads match)
+            WORKSPACE_HEAD=$(echo "$STATUS_RESPONSE" | jq -r '.workspaceHead // empty')
+            GIT_HEAD=$(echo "$STATUS_RESPONSE" | jq -r '.gitHead // empty')
+            
+            if [ "$WORKSPACE_HEAD" = "$GIT_HEAD" ] && [ -n "$WORKSPACE_HEAD" ]; then
+              echo "✅ Sync completed successfully!"
+              echo "🎯 DEV workspace is now up-to-date with main branch"
+              break
+            fi
+            
+            if [ $i -eq 20 ]; then
+              echo "⚠️ Sync is taking longer than expected (5 minutes)"
+              echo "The operation was initiated but may still be in progress"
+              echo "Please check the workspace manually if needed"
+            fi
+          done
+
+      - name: Handle Git Credentials Issue
+        if: steps.detect-changes.outputs.sync_needed == 'true' && steps.git-connection.outputs.git_configured == 'false'
+        run: |
+          echo "❌ Git credentials not configured for service principal"
+          echo ""
+          echo "🔧 SOLUTIONS:"
+          echo "1. Manual Git connection setup required:"
+          echo "   - Sign into Fabric with user account"
+          echo "   - Go to DEV workspace → Settings → Git integration"
+          echo "   - Disconnect and reconnect to GitHub repository"
+          echo ""
+          echo "2. Alternative: Use GitHub App authentication instead of service principal"
+          echo ""
+          echo "3. Alternative: Use dedicated service user account with PAT"
+          echo ""
+          echo "ℹ️ This is a one-time setup issue that can be resolved manually"
+          exit 1
+
+      - name: Summary Report
+        if: always() && steps.detect-changes.outputs.sync_needed == 'true'
+        run: |
+          echo "📋 Auto-Sync Summary Report:"
+          echo "════════════════════════════════════════"
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Triggered by: ${{ github.actor }}"
+          echo "Event: ${{ github.event_name }}"
+          echo "Workspace: FABRIC-CATALYST-GH-DEV"
+          echo ""
+          
+          if [ "${{ steps.git-status.outputs.sync_required }}" = "true" ]; then
+            echo "✅ Status: Workspace synchronized automatically"
+            echo "📄 Changed files in fabric folder:"
+            echo "${{ steps.detect-changes.outputs.changed_files }}"
+          else
+            echo "ℹ️ Status: No sync required (workspace already up-to-date)"
+          fi
+          
+          echo ""
+          echo "🚀 Next: DEV workspace ready for deployment pipeline"

@@ -2,7 +2,7 @@
 layout: page
 title: Real Time Intelligence
 subtitle: Gold Layer
-menubar: docs_menu
+menubar: RTI_docs_menu
 show_sidebar: false
 toc: true
 ---
@@ -75,4 +75,4 @@ IoTSilverDedupMV
 At this stage you have a queriable Silver Layer along with an aggregated Gold Layer. This allow you to run ad-hoc queries and build visuals that can span long periods of time along with drilling down to specific records.
 
 {: .no_toc }
-#### Next: [Visualization]({{ site.baseurl }}/docs/Visualization/)
+#### Next: [Visualization]({{ site.baseurl }}/docs/RTI_Visualization/)

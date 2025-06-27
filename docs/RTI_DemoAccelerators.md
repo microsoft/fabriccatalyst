@@ -2,7 +2,7 @@
 layout: page
 title: Real Time Intelligence
 subtitle: Demo/PoC Accelerators
-menubar: docs_menu
+menubar: RTI_docs_menu
 show_sidebar: false
 toc: true
 ---
@@ -33,6 +33,6 @@ This repository contains:
 - Ready-to-use code snippets
 
 {: .no_toc }
-#### Next: [Customer Stories]({{ site.baseurl }}/docs/CustomerStories/)
+#### Next: [Customer Stories]({{ site.baseurl }}/docs/RTI_CustomerStories/)
 
 

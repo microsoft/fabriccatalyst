@@ -1,0 +1,69 @@
+name: Power BI CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'fabric/**'
+  workflow_dispatch:
+
+jobs:
+  deploy-uat:
+    name: Deploy to UAT
+    runs-on: ubuntu-latest
+    environment: UAT
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Install Python dependencies
+        run: |
+          pip install requests
+          pip install python-dotenv
+          
+      - name: Deploy to UAT
+        run: |
+          python ./scripts/deploy_all.py
+        env:
+          TENANT_ID: ${{ secrets.FABRIC_TENANT_ID }}
+          APP_ID: ${{ secrets.FABRIC_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.FABRIC_CLIENT_SECRET }}
+          PIPELINE_NAME: ${{ secrets.FABRIC_PIPELINE_NAME }}
+          STAGE_ORDER: 0
+
+  deploy-prod:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    environment: PROD
+    needs: deploy-uat
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Install Python dependencies
+        run: |
+          pip install requests
+          pip install python-dotenv
+          
+      - name: Deploy to Production
+        run: |
+          python ./scripts/deploy_all.py
+        env:
+          TENANT_ID: ${{ secrets.FABRIC_TENANT_ID }}
+          APP_ID: ${{ secrets.FABRIC_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.FABRIC_CLIENT_SECRET }}
+          PIPELINE_NAME: ${{ secrets.FABRIC_PIPELINE_NAME }}
+          STAGE_ORDER: 1
