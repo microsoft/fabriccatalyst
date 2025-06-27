@@ -2,7 +2,7 @@
 layout: page
 title: Real Time Intelligence
 subtitle: Medallion Architecture
-menubar: docs_menu
+menubar: RTI_docs_menu
 show_sidebar: false
 toc: true
 ---
@@ -159,4 +159,4 @@ For more information about implementing a Fabric lakehouse, see the following re
 
 
 {: .no_toc }
-#### Next: [Data Sources]({{ site.baseurl }}/docs/Data_Sources/)
+#### Next: [Data Sources]({{ site.baseurl }}/docs/RTI_Data_Sources/)

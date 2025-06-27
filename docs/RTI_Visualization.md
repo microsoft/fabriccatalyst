@@ -2,7 +2,7 @@
 layout: page
 title: Real Time Intelligence
 subtitle: Visualization and Act
-menubar: docs_menu
+menubar: RTI_docs_menu
 show_sidebar: false
 toc: true
 ---
@@ -45,4 +45,4 @@ There is a fully supported [REST APIs](https://learn.microsoft.com/en-us/kusto/a
 - [Using Dual Mode dimension in Power BI with ADX data](https://techcommunity.microsoft.com/blog/azuredataexplorer/using-dual-mode-dimension-in-power-bi-with-adx-data/3744264)
 
 {: .no_toc }
-#### Next: [Demo/PoC Accelerators]({{ site.baseurl }}/docs/DemoAccelerators/)
+#### Next: [Demo/PoC Accelerators]({{ site.baseurl }}/docs/RTI_DemoAccelerators/)

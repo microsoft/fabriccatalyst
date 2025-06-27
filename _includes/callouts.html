@@ -26,6 +26,9 @@
                                 {% if callout.coming_soon %}
                                     <span class="is-size-7 is-italic has-text-grey">(Coming soon)</span>
                                 {% endif %}
+                                {% if callout.new_label %}
+                                    <span class="is-size-7 has-text-weight-bold has-text-success" style="margin-left: 0.5em;">({{ callout.new_label }})</span>
+                                {% endif %}
                             </p>
                             <p class="subtitle is-5">{{ callout.subtitle }}</p>
                         </div>

@@ -1,0 +1,23 @@
+- label: DevOps Patterns
+  items:
+    - name: Fabric Git Integration & CI/CD Pipeline
+      link: /DevOps_docs/
+      items:
+        - name: Power BI Desktop Configuration
+          link: /docs/DevOps_PowerBI_Desktop_Config/
+        - name: Fabric Environment Setup
+          link: /docs/DevOps_Fabric_Environment_Setup/
+        - name: Git Repository Configuration
+          link: /docs/DevOps_Git_Repository_Config/
+        - name: Deployment Pipelines
+          link: /docs/DevOps_Deployment_Pipelines/
+        - name: GitHub Actions Automation
+          link: /docs/DevOps_GitHub_Actions/
+        - name: Development Workflow
+          link: /docs/DevOps_Development_Workflow/
+        - name: Testing & Validation
+          link: /docs/DevOps_Testing_Validation/
+        - name: Best Practices & Troubleshooting
+          link: /docs/DevOps_Best_Practices/
+        - name: Case Studies
+          link: /docs/DevOps_Case_Studies/ 

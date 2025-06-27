@@ -2,7 +2,7 @@
 layout: page
 title: Real Time Intelligence
 subtitle: Medallion Architecture - Bronze Layer
-menubar: docs_menu
+menubar: RTI_docs_menu
 show_sidebar: false
 toc: true
 ---
@@ -39,4 +39,4 @@ Note that just because you utilize an update policy and thus an KQL DB table as 
 ![Real-Time Intelligence Medallion Architecture]({{ site.baseurl }}/assets/images/rtibronzelookup.png)
 
 {: .no_toc }
-#### Next: [Silver Layer]({{ site.baseurl }}/docs/SilverLayer/)
+#### Next: [Silver Layer]({{ site.baseurl }}/docs/RTI_SilverLayer/)

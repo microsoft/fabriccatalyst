@@ -2,7 +2,7 @@
 layout: page
 title: Real Time Intelligence
 subtitle: Medallion Architecture - Data Sources
-menubar: docs_menu
+menubar: RTI_docs_menu
 show_sidebar: false
 toc: true
 ---
@@ -58,4 +58,4 @@ Eventhouse has the capability of ingesting data from S3 Buckets. Combining AWS L
 
 
 {: .no_toc }
-#### Next: [Bronze Layer]({{ site.baseurl }}/docs/BronzeLayer/)
+#### Next: [Bronze Layer]({{ site.baseurl }}/docs/RTI_BronzeLayer/)

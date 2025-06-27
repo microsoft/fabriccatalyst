@@ -11,7 +11,7 @@ items:
       * Silver Layer transformations
       * Gold Layer analytics
     call_to_action_name: Learn More
-    call_to_action_link: /docs/
+    call_to_action_link: /RTI_docs/
   
   - title: Lakehouse
     subtitle: Unpacking different technical designs for a unified foundation for your data.
@@ -37,11 +37,13 @@ items:
     # call_to_action_link: /page-5/
     coming_soon: true
   
-  - title: DataOps
-    subtitle: Streamlining data operations and automation practices.
-    icon: /assets/icons/dataops2.png
-    # call_to_action_link: /page-6/
-    coming_soon: true
+  - title: DevOps
+    subtitle: Streamlining development and operations with automation and best practices.
+    icon: /assets/icons/dataops.png
+    call_to_action_name: Learn More
+    call_to_action_link: /DevOps_docs/
+    coming_soon: false
+    new_label: New!
   
   - title: Data Warehouse
     subtitle: Modern data warehouse architecture and implementation strategies.

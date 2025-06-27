@@ -1,0 +1,23 @@
+intro: |-
+  # DevOps Success Stories with Microsoft Fabric
+
+  Explore how organizations are implementing DevOps practices with Microsoft Fabric to achieve faster delivery, improved quality, and better collaboration.
+items:
+  - title: Coming Soon
+    subtitle: DevOps case studies will be added here
+    description: |-
+      Real-world DevOps implementations and success stories will be featured here.
+      
+      * CI/CD pipeline implementations
+      * Infrastructure as Code success stories
+      * Monitoring and observability solutions
+      * Security and compliance achievements
+    features:
+      - DevOps Implementation
+      - Microsoft Fabric
+      - CI/CD Pipelines
+      - Infrastructure as Code
+    image: /img/placeholder.jpg
+    image_ratio: is-4by3
+    button_text: Learn More
+    button_class: is-primary is-medium 

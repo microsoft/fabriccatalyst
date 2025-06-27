@@ -2,7 +2,7 @@
 layout: page
 title: Technical Guidance
 subtitle: Real Time Intelligence Patterns
-menubar: docs_menu
+menubar: RTI_docs_menu
 show_sidebar: false
 ---
 
