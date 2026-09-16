@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-@use 'sass:math';
-
 @import '../node_modules/bulma/sass/utilities/initial-variables';
 @import '../node_modules/bulma/sass/utilities/derived-variables';
 
@@ -19,8 +17,8 @@ $block-list-highlight-width: 5px !default;
   list-style: none;
 
   li {
-    padding: math.div($gap, 2);
-    background: var(--bulma-body-background-color);
+    padding: $gap / 2;
+    background: $scheme-main;
     margin-bottom: $block-list-separator;
   }
 
@@ -42,7 +40,7 @@ $block-list-highlight-width: 5px !default;
   li.is-small,
   &.is-small > li {
     font-size: $size-7;
-    padding: math.div($gap, 3);
+    padding: $gap / 3;
   }
 
   li.is-normal,
@@ -62,13 +60,14 @@ $block-list-highlight-width: 5px !default;
 
   li.is-highlighted,
   &.is-highlighted > li {
-    border-left: $block-list-highlight-width var(--bulma-dark) solid;
+    border-left: $block-list-highlight-width $dark solid;
   }
 
   @mixin outlined($color) {
+    $pair: map-get($colors, $color);
     background: transparent;
-    color: var(--bulma-#{$color});
-    border: 1px solid var(--bulma-#{$color});
+    color: nth($pair, 1);
+    border: 1px solid nth($pair, 1);
   }
 
   li.is-outlined,
@@ -101,8 +100,8 @@ $block-list-highlight-width: 5px !default;
   @each $name, $pair in $colors {
     li.is-#{$name},
     &.is-#{$name} > li {
-      background: var(--bulma-#{$name});
-      color: var(--bulma-#{$name}-invert);
+      background: nth($pair, 1);
+      color: nth($pair, 2);
     }
 
     li.is-#{$name}.is-outlined {
@@ -111,7 +110,7 @@ $block-list-highlight-width: 5px !default;
 
     li.is-#{$name}.is-highlighted {
       @include outlined($name);
-      border-left: $block-list-highlight-width var(--bulma-#{$name}) solid;
+      border-left: $block-list-highlight-width nth($pair, 1) solid;
     }
 
     &.is-#{$name} {
@@ -123,7 +122,7 @@ $block-list-highlight-width: 5px !default;
       li.is-highlighted,
       &.is-highlighted > li {
         @include outlined($name);
-        border-left: $block-list-highlight-width var(--bulma-#{$name}) solid;
+        border-left: $block-list-highlight-width nth($pair, 1) solid;
       }
     }
   }
